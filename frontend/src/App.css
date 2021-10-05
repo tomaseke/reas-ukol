@@ -26,6 +26,12 @@ button {
   cursor: pointer;
   width: 20vw;
   font-size: 1.2em;
+  min-width: fit-content;
+}
+
+button:hover {
+  border: 2px solid black;
+  height: initial;
 }
 
 h1 {
@@ -138,7 +144,7 @@ input[type="radio"] {
   margin: 20px 0;
 }
 
-input[name="contact-details"] {
+.contact-input {
   border-radius: 5px;
   border: 0.5px solid black;
   height: 3vh;
@@ -164,4 +170,34 @@ input[name="contact-details"] {
 
 #back:hover {
   border: 2px solid black;
+}
+
+.invalid-input {
+  border: 2px solid red;
+}
+
+/*page 3*/
+
+.third-page {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  background-color: white;
+  color: #000000;
+  border: 2px solid rgb(126, 126, 126);
+  padding: 10px;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+
+a:hover {
+  border: 2px solid black;
+}
+
+.success {
+  text-align: center;
 }

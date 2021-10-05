@@ -15,6 +15,7 @@ const ContactForm = ({ enteredInfo, setter }) => {
           name="contact-details"
           id="name"
           onChange={changeInfo}
+          className="contact-input"
           required
         />
       </label>
@@ -25,6 +26,7 @@ const ContactForm = ({ enteredInfo, setter }) => {
           name="contact-details"
           id="phone"
           onChange={changeInfo}
+          className="contact-input"
           required
         />
       </label>
@@ -35,6 +37,7 @@ const ContactForm = ({ enteredInfo, setter }) => {
           name="contact-details"
           id="email"
           onChange={changeInfo}
+          className="contact-input"
           required
         />
       </label>

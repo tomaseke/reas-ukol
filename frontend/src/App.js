@@ -17,6 +17,9 @@ function App() {
     email: "",
   });
 
+  const [isPhoneValid, setIsPhoneValid] = useState(false);
+  const [isEmailValid, setIsEmailValid] = useState(false);
+
   const [page, setPage] = useState(1);
 
   function nextPage() {
@@ -27,24 +30,47 @@ function App() {
 
   function pageBack() {
     setPage(1);
-    if (allInfo.region) {
-      // document.querySelector(`.${allInfo.region}`).style.backgroundColor =
-      //   "blue";
-      console.log(document.querySelector(`.${allInfo.region}`));
-    }
   }
 
   function submit(e) {
     e.preventDefault();
-    if (allInfo.name && allInfo.phone && allInfo.email) {
+
+    const isInputValid = isEmailValid && isPhoneValid ? true : false;
+
+    if (allInfo.name && isInputValid) {
+      document.getElementById("phone").classList.remove("invalid-input");
+      document.getElementById("email").classList.remove("invalid-input");
+
       let obj = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(allInfo),
       };
-      fetch("/lead", obj);
+      fetch("/lead", obj).then(() => setPage(3));
+    } else {
+      document.getElementById("phone").classList.remove("invalid-input");
+      document.getElementById("email").classList.remove("invalid-input");
+
+      if (!isPhoneValid) {
+        document.getElementById("phone").classList.add("invalid-input");
+      }
+      if (!isEmailValid) {
+        document.getElementById("email").classList.add("invalid-input");
+      }
     }
   }
+
+  useEffect(() => {
+    // this should catch only the basic missclicks and absolute nonsense
+
+    /^[ ]{0,}\S+@\S+\.\S+[ ]{0,}$/.test(allInfo.email)
+      ? setIsEmailValid(true)
+      : setIsEmailValid(false);
+
+    /^[0-9]{9}$/.test(allInfo.phone)
+      ? setIsPhoneValid(true)
+      : setIsPhoneValid(false);
+  }, [allInfo.email, allInfo.phone]);
 
   useEffect(() => {
     window.scrollTo(0, document.body.scrollHeight);
@@ -90,6 +116,12 @@ function App() {
               </button>
             )}
           </div>
+        </div>
+      )}
+      {page === 3 && (
+        <div className="third-page">
+          <h1 className="success">Formulář byl úspěšné odeslán.</h1>
+          <a href="https://reas.cz">Domovská stránka</a>
         </div>
       )}
     </div>
