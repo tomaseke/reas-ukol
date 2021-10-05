@@ -17,6 +17,7 @@ const ContactForm = ({ enteredInfo, setter }) => {
           onChange={changeInfo}
           className="contact-input"
           required
+          placeholder="např: Prokop Buben"
         />
       </label>
       <label htmlFor="phone" className="contact-label">
@@ -28,6 +29,7 @@ const ContactForm = ({ enteredInfo, setter }) => {
           onChange={changeInfo}
           className="contact-input"
           required
+          placeholder="např: 123456789"
         />
       </label>
       <label htmlFor="email" className="contact-label">
@@ -39,6 +41,7 @@ const ContactForm = ({ enteredInfo, setter }) => {
           onChange={changeInfo}
           className="contact-input"
           required
+          placeholder="např: prokop.buben@spoluzaci.cz"
         />
       </label>
     </section>

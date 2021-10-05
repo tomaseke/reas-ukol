@@ -1,6 +1,7 @@
 const locations = [
   {
     region: "praha",
+    regionCz: "Praha",
     districts: [
       "Praha 1",
       "Praha 2",
@@ -16,6 +17,7 @@ const locations = [
   },
   {
     region: "stredocesky",
+    regionCz: "Středočeský",
     districts: [
       "Benešov",
       "Beroun",
@@ -33,6 +35,7 @@ const locations = [
   },
   {
     region: "plzensky",
+    regionCz: "Plzeňský",
     districts: [
       "Domažlice",
       "Klatovy",
@@ -45,10 +48,12 @@ const locations = [
   },
   {
     region: "karlovarsky",
+    regionCz: "Karlovarský",
     districts: ["Cheb", "Karlovy Vary", "Sokolov"],
   },
   {
     region: "ustecky",
+    regionCz: "Ústecký",
     districts: [
       "Chomutov",
       "Děčín",
@@ -61,10 +66,12 @@ const locations = [
   },
   {
     region: "liberecky",
+    regionCz: "Liberecký",
     districts: ["Česká Lípa", "Jablonec nad Nisou", "Liberec", "Semily"],
   },
   {
     region: "kralovehradecky",
+    regionCz: "Královéhradecký",
     districts: [
       "Hradec Králové",
       "Jičín",
@@ -75,10 +82,12 @@ const locations = [
   },
   {
     region: "pardubicky",
+    regionCz: "Pardubický",
     districts: ["Chrudim", "Pardubice", "Svitavy", "Ústí nad Orlicí"],
   },
   {
     region: "vysocina",
+    regionCz: "Vysočina",
     districts: [
       "Havlíčkův brod",
       "Jihlava",
@@ -89,6 +98,7 @@ const locations = [
   },
   {
     region: "jihocesky",
+    regionCz: "Jihočeský",
     districts: [
       "České Budějovice",
       "Český Krumlov",
@@ -101,6 +111,7 @@ const locations = [
   },
   {
     region: "jihomoravsky",
+    regionCz: "Jihomoravský",
     districts: [
       "Blansko",
       "Břeclav",
@@ -113,14 +124,17 @@ const locations = [
   },
   {
     region: "olomoucky",
+    regionCz: "Olomoucký",
     districts: ["Jeseník", "Olomouc", "Přerov", "Prostějov", "Šumperk"],
   },
   {
     region: "zlinsky",
+    regionCz: "Zlínský",
     districts: ["Kroměříž", "Uherské Hradiště", "Vsetín", "Zlín"],
   },
   {
     region: "moravskoslezsky",
+    regionCz: "Moravskoslezský",
     districts: [
       "Bruntál",
       "Frýdek-Místek",

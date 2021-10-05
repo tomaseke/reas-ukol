@@ -6,6 +6,7 @@ import Map from "./components/Map";
 import Districts from "./components/Districts";
 import EstateType from "./components/EstateType";
 import ContactForm from "./components/ContactForm";
+import RegionsMobile from "./components/RegionsMobile.js";
 
 function App() {
   const [allInfo, setAllInfo] = useState({
@@ -29,13 +30,16 @@ function App() {
   }
 
   function pageBack() {
+    allInfo.name = "";
+    allInfo.phone = "";
+    allInfo.email = "";
     setPage(1);
   }
 
   function submit(e) {
     e.preventDefault();
 
-    const isInputValid = isEmailValid && isPhoneValid ? true : false;
+    const isInputValid = isEmailValid && isPhoneValid;
 
     if (allInfo.name && isInputValid) {
       document.getElementById("phone").classList.remove("invalid-input");
@@ -84,6 +88,7 @@ function App() {
       {page === 1 && (
         <div className="first-page">
           <Map enteredInfo={allInfo} setter={setAllInfo} page={page} />
+          <RegionsMobile enteredInfo={allInfo} setter={setAllInfo} />
           {allInfo.region && (
             <Districts enteredInfo={allInfo} setter={setAllInfo} />
           )}

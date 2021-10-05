@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const Map = ({ enteredInfo, setter, page }) => {
   function changeInfo(e) {
     // for text clicked
-    if (e.nativeEvent.path.length === 12) {
+    if (e.target.tagName === "tspan") {
       setter({
         ...enteredInfo,
         region: `${e.target.parentElement.parentElement.getAttribute("class")}`,
@@ -12,7 +12,7 @@ const Map = ({ enteredInfo, setter, page }) => {
       });
     }
     // for svg area clicked
-    if (e.nativeEvent.path.length === 11) {
+    if (e.target.tagName === "path") {
       setter({
         ...enteredInfo,
         region: `${e.target.parentElement.getAttribute("class")}`,
@@ -63,7 +63,9 @@ const Map = ({ enteredInfo, setter, page }) => {
 
   return (
     <div className="map-container">
-      <h1>Vyberte kraj, ve kterém se nemovitost nachází</h1>
+      <h1 className="district-h1">
+        Vyberte kraj, ve kterém se nemovitost nachází
+      </h1>
       <svg
         className="svg-map ng-isolate-scope"
         height="480"
