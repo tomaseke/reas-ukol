@@ -7,4 +7,5 @@ Backend server se startuje na PORTU 3001, frontend klasicky na PORTU 3000. Front
 MongoDB jsem si založil na Mlabu, přičemž string na připojení k databázi je v .env.
 
 Spuštění frontendu: npm start
+
 Spuštění backendu: npm test
